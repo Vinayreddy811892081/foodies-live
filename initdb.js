@@ -1,15 +1,5 @@
 const sql = require("better-sqlite3");
-// lib/db.js
-import Database from "better-sqlite3";
-import path from "path";
-
-// Point to the DB file inside your deployed package
-const dbPath = path.join(process.cwd(), "data", "meals.db");
-
-// Open in read-only mode to avoid write issues on Vercel
-const db = new Database(dbPath, { readonly: true });
-
-export default db;
+const db = sql("meals.db");
 
 const dummyMeals = [
   {
